@@ -34,8 +34,7 @@ public class Main {
         //"3. Fill the array with numbers from 100 to 0.
         int[] f = new int[101];
         int g = 0;
-        for (int k = 100; k >= 0; k--)
-        {
+        for (int k = 100; k >= 0; k--) {
             f[g] = k;
             //System.out.println(f[g]);
             g++;
@@ -44,24 +43,23 @@ public class Main {
         //task 4
         //4. Given an array of 10 integers. To display the sum of all its elements except the first and last.
         int[] l = new int[10];
-        for (int i =0;i<10;i++){
-            l[i]=i;
+        for (int i = 0; i < 10; i++) {
+            l[i] = i;
 //            System.out.println(l[i]);
         }
-        int n =0;
-        for (int m=0;m<10;m++){
-            if (m==0||m==9)
-            {
+        int n = 0;
+        for (int m = 0; m < 10; m++) {
+            if (m == 0 || m == 9) {
                 continue;
             }
-            n=n+l[m];
+            n = n + l[m];
         }
         System.out.println(n);
 
         //task 5
         //"5. Write a function which calculates and returns the minimum of 4 arguments.
         Main obj = new Main();
-        System.out.println(obj.min(100,9,10,11));
+        System.out.println(obj.min(100, 9, 10, 11));
 
         //task 6
         //6. Write a method named getEvenDigitSum with one parameter of the type "int".
@@ -73,7 +71,74 @@ public class Main {
         // "7. Write a method named getGreatestCommonDivisor with two parameters of type int named first and second.
         //If one of the parameters is < 10, method should return -1 to indicate an invalid value.
         //The method should return the greatest common divisor of two numbers."
-        System.out.println(getGreatestCommonDivisor(18,30));
+        System.out.println(getGreatestCommonDivisor(18, 30));
+
+        //task 8
+        //"8. Write a program which prints the next figure to the console:
+        //**********
+        //**********
+        //**********
+        //**********"
+        for (int y = 0; y <= 5; y++) {
+            for (int i = 0; i <= 10; i++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        //task 9
+        //"9. Write a program which prints the next figure to the console:
+        //*
+        //**
+        //***
+        //****
+        //*****
+        //******
+        //*******"
+        for (int i1=0; i1 <= 7; i1++) {
+            for (int i2=0; i2 < i1; i2++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        //task 10
+        //"10*. Write a program which prints the next figure to the console:
+        //**********
+        //*        *
+        //*        *
+        //*        *
+        //**********"
+        for (int y = 0; y <= 5; y++) {
+            for (int i = 0; i <= 10; i++) {
+                if((y!=0 && y!=5) && (i!=0&&i!=10)){
+                    System.out.print(" ");
+                    continue;
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        //task 11
+        //"11*. Write a program which prints the next figure to the console:
+        //          *
+        //         ***
+        //        *****
+        //       *******
+        //      *********
+        //     ***********"
+        int centr = 5;
+        for (int y = 0; y <= centr; y++) {
+            for (int i = 0; i <= 10; i++) {
+                if((i<=centr-y-1)||(i>=centr+y+1)){
+                    System.out.print(" ");
+                    continue;
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
     public static int min(int a, int b, int c, int d) {
         if (min(a,b)==b){a = b;}
@@ -130,7 +195,7 @@ public class Main {
         int[] m = new int[a+1];
         for(int i = 1;i<=a;i++){
             if(a%i==0){
-            m[i]=i;}
+                m[i]=i;}
         }
         return m;
     }
