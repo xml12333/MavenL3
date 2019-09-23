@@ -1,144 +1,50 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         //task 1
-        //"1. Print numbers from 10 to 20 using all known cycles.
-        int a = 10;
-        int b = 20;
-        while (a <= b) {
-            System.out.println(a++);
-        }
-        a = 10;
-        do {
-            System.out.println(a++);
-        } while (a <= b);
+        double v1,v2,t1,t2;
+        v1=100;
+        v2=50;
+        t1 = 36.6;
+        t2 = 38;
 
-        for (a = 10; a <= b; a++) {
-            System.out.println(a);
-        }
-        int[] c = new int[11];
-        int d = 10;
-        for (int i : c) {
-            System.out.println(d++);
-        }
+        System.out.println("V="+(v1+v2)/2);
+        System.out.println("T="+(t1+t2)/2);
         //task 2
-        //"2. Print all the numbers from 1 to 100, which are divided by 3 without a remainder.
-        int e;
-        for (e = 1; e <= 100; e++) {
-            if (e % 3 == 0) {
-                System.out.println(e);
-            }
-        }
+        double hrivna,evro,dollar,funt;
+        hrivna = 1;
+        evro = 35.38802342;
+        dollar = 23.234231344234;
+        funt = 45.23412345;
+        Scanner obj = new Scanner (System.in);
+        System.out.println("Enter summ:");
+        double summ = obj.nextDouble();
+        System.out.println("In evro summ:"+ summ*evro);
+        System.out.println("In dollar summ:"+ summ*dollar);
+        System.out.println("In funt summ:"+ summ*funt);
         //task 3
-        //"3. Fill the array with numbers from 100 to 0.
-        int[] f = new int[101];
-        int g = 0;
-        for (int k = 100; k >= 0; k--) {
-            f[g] = k;
-            //System.out.println(f[g]);
-            g++;
-
-        }
+        int a,b,a4,a6;
+        a = 125;
+        b = a*a;
+        a4 = b*b;
+        a6= b*b*b;
         //task 4
-        //4. Given an array of 10 integers. To display the sum of all its elements except the first and last.
-        int[] l = new int[10];
-        for (int i = 0; i < 10; i++) {
-            l[i] = i;
-//            System.out.println(l[i]);
-        }
-        int n = 0;
-        for (int m = 0; m < 10; m++) {
-            if (m == 0 || m == 9) {
-                continue;
-            }
-            n = n + l[m];
-        }
-        System.out.println(n);
+        int a1=100;
+        int b2=200;
+        int c;
 
-        //task 5
-        //"5. Write a function which calculates and returns the minimum of 4 arguments.
-        Main obj = new Main();
-        System.out.println(obj.min(100, 9, 10, 11));
+        c = a1;
+        a1 = b2;
+        b2 = c;
 
-        //task 6
-        //6. Write a method named getEvenDigitSum with one parameter of the type "int".
-        // The method should return the sum of even digits within the number.
-        // If the number is negative, method should return -1;
-        System.out.println(getEvenDigitSum(9));
+        a1 = a1+b2;
+        b2 = a1-b2;
+        a1 = a1-b2;
 
-        //task 7
-        // "7. Write a method named getGreatestCommonDivisor with two parameters of type int named first and second.
-        //If one of the parameters is < 10, method should return -1 to indicate an invalid value.
-        //The method should return the greatest common divisor of two numbers."
-        System.out.println(getGreatestCommonDivisor(18, 30));
 
-        //task 8
-        //"8. Write a program which prints the next figure to the console:
-        //**********
-        //**********
-        //**********
-        //**********"
-        for (int y = 0; y <= 5; y++) {
-            for (int i = 0; i <= 10; i++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
 
-        //task 9
-        //"9. Write a program which prints the next figure to the console:
-        //*
-        //**
-        //***
-        //****
-        //*****
-        //******
-        //*******"
-        for (int i1=0; i1 <= 7; i1++) {
-            for (int i2=0; i2 < i1; i2++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-
-        //task 10
-        //"10*. Write a program which prints the next figure to the console:
-        //**********
-        //*        *
-        //*        *
-        //*        *
-        //**********"
-        for (int y = 0; y <= 5; y++) {
-            for (int i = 0; i <= 10; i++) {
-                if((y!=0 && y!=5) && (i!=0&&i!=10)){
-                    System.out.print(" ");
-                    continue;
-                }
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-
-        //task 11
-        //"11*. Write a program which prints the next figure to the console:
-        //          *
-        //         ***
-        //        *****
-        //       *******
-        //      *********
-        //     ***********"
-        int centr = 5;
-        for (int y = 0; y <= centr; y++) {
-            for (int i = 0; i <= 10; i++) {
-                if((i<=centr-y-1)||(i>=centr+y+1)){
-                    System.out.print(" ");
-                    continue;
-                }
-                System.out.print("*");
-            }
-            System.out.println();
-        }
     }
     public static int min(int a, int b, int c, int d) {
         if (min(a,b)==b){a = b;}
