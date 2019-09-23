@@ -4,17 +4,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //task 1
-        double v1,v2,t1,t2;
+        double v1,v2,t1,t2,k1,k2;
         v1=100;
         v2=50;
         t1 = 36.6;
         t2 = 38;
-
-        System.out.println("V="+(v1+v2)/2);
-        System.out.println("T="+(t1+t2)/2);
+        k1 = v1/v2;
+        k2 = t1/t2;
+        System.out.println("V="+(v1+v2)/2*k1);
+        System.out.println("T="+(t1+t2)/2*k2);
         //task 2
-        double hrivna,evro,dollar,funt;
-        hrivna = 1;
+        double evro,dollar,funt;
         evro = 35.38802342;
         dollar = 23.234231344234;
         funt = 45.23412345;
