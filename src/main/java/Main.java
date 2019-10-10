@@ -1,117 +1,141 @@
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        //task 2
-        //2. Create ENUM and print.
-        for (NotebookBrand brand : NotebookBrand.values()) {
-            System.out.println(brand);
-        }
-        //task 3
-        //C3. Create Map vehicles : vehicles.put("BMW", 5);, print
-        HashMap<String, Integer> vehicles = new HashMap<String, Integer>();
-        vehicles.put("BMW", 5);
-        System.out.println(vehicles.get("BMW"));
-        //task 7
-        //"7. Create HashMap<String, String> and add 10 pairs:
-        // watermelon, berry;
-        // banana, fruit;
-        // cherry, berry;
-        // pineapple, fruit;
-        // melon, vegetable;
-        // cranberry, berry;
-        // apple, fruit;
-        // iris, flower;
-        // potato, vegetable;
-        // carrot, vegetable;
-        //
-        //Print the content of the map, each pair from a new line.
-        //Example:
-        //watermelon - berry;
-        //cherry - berry;
-        //..."
-        HashMap<String, String> content = new HashMap<String, String>();
-        content.put("watermelon", "berry");
-        content.put("banana", "fruit");
-        content.put("cherry", "berry");
-        content.put("pineapple", "fruit");
-        content.put("melon", "vegetable");
-        content.put("cranberry", "berry");
-        content.put("apple", "fruit");
-        content.put("iris", "flower");
-        content.put("potato", "vegetable");
-        content.put("carrot", "vegetable");
-        for (String item : content.keySet()) {
-            System.out.println(item+" "+content.get(item));
-        }
-        //task 8
-        //"8. Create HashMap<String, String> and add 10 pairs:
-        // watermelon, berry;
-        // banana, fruit;
-        // cherry, berry;
-        // pineapple, fruit;
-        // melon, vegetable;
-        // cranberry, berry;
-        // apple, fruit;
-        // iris, flower;
-        // potato, vegetable;
-        // carrot, vegetable;
-        // Print only vegetables to the console."
-        System.out.println("-------------------");
-        HashMap<String, String> content1 = new HashMap<String, String>();
-        content1.put("watermelon", "berry");
-        content1.put("banana", "fruit");
-        content1.put("cherry", "berry");
-        content1.put("pineapple", "fruit");
-        content1.put("melon", "vegetable");
-        content1.put("cranberry", "berry");
-        content1.put("apple", "fruit");
-        content1.put("iris", "flower");
-        content1.put("potato", "vegetable");
-        content1.put("carrot", "vegetable");
-        for (Map.Entry<String,String> item : content.entrySet()) {
-            if (item.getValue() == "vegetable"){
-                System.out.println(item);
+
+
+    public static void main(String[] args) throws MyOwnExeption{
+        //task 1
+        //1. Create method to check: if number < 0 print “Number < 0”,
+        // if number > 0 print “Number > 0” if number = 0 throw your own exception
+        int number = 1;
+        if (number < 0) {
+            System.out.println("Number<0");
+        } else {
+            if (number > 0) {
+                System.out.println("Number>0");
+            } else {
+                throw new MyOwnExeption();
             }
         }
 
-        //task 10
-        //"10. Create enum for days of the week.
-        // Write a program which will be printing the number of a day according to day of the week.
-        // Example:
-        //If today is Sunday - print 1;
-        //If today is Monday - print 2
-        //..."
-        Days day = Days.UN;
-        switch (day) {
-            case MON:
-                System.out.println(1);
-                break;
-            case THU:
-                System.out.println(2);
-                break;
-            case WEN:
-                System.out.println(3);
-                break;
-            case THI:
-                System.out.println(4);
-                break;
-            case FRI:
-                System.out.println(5);
-                break;
-            case SUT:
-                System.out.println(6);
-                break;
-            case SUN:
-                System.out.println(7);
-                break;
-            default:
-                System.out.println("budun");
-                break;
+        //task 2
+        //"2. Fix the method with try-catch to get the correct result of division:
+        //public class Main {
+        //
+        //    public static void main(String[] args) {
+        //        System.out.println(divideByZero());
+        //    }
+        //
+        //    public static int divideByZero() {
+        //        int a = 5;
+        //        int b = 0;
+        //        return a / b;
+        //    }
+        //}"
+        System.out.println(divideByZero());
+        //task 3
+        //"3. Finish the program to handle all the possible exceptions:
+        //public class Main {
+        //
+        //    public static void main(String[] args) {
+        //        int a = args.length;
+        //        System.out.println(a);
+        //
+        //        int b = 10 / a;
+        //        int[] c = {1};
+        //        System.out.println(c[1]);
+        //
+        //    }
+        //
+        //}
+        //
+        //Print the cause of the exception to the console."
+        int a = args.length;
+        System.out.println(a);
+        try {
+            int b = 10 / a;
+            int[] c = {1};
+            System.out.println(c[1]);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
         }
 
-    }
-}
+        //task 4
+        //"4. Fix the program to make it work:
+        //public static void main(String[] args) {
+        //        try {
+        //            int a = 0;
+        //            int b = 4 / a;
+        //        } catch (Exception e) {
+        //            e.printStackTrace();
+        //        } catch (ArithmeticException e) {
+        //            e.printStackTrace();
+        //        }
+        //    }"
+        try {
+            int x = 0;
+            int b = 4 / x;
+        } catch (ArithmeticException e) {
+           e.printStackTrace();
+        }
 
+        //task 5
+        //"5. Throw a NullPointerException from the method iCanThrowException();
+        //Handle it in the main method.
+        //public class Main {
+        //
+        //    public static void main(String[] args) {
+        //        iCanThrowException();
+        //    }
+        //
+        //    public static void iCanThrowException() {
+        //
+        //    }
+        //
+        //}"
+
+        //this answer commented because task 6 will not run
+        //iCanThrowException();
+
+        //task 6
+        //"6. Write a program that will enter numbers from the keyboard.
+        //The code for reading numbers from the keyboard must be in the readData method.
+        //The code inside the readData is wrapped in a try..catch.
+        //If the user entered some text, instead of entering a number, the method should catch the exception and display all previously entered numbers as a result.
+        //Numbers output from a new line preserving the order of input."
+        readData();
+
+    }
+    public static void readData (){
+        ArrayList<Integer> x = new ArrayList();
+        try {
+            while (true){
+                Scanner a = new Scanner(System.in);
+                x.add(a.nextInt());
+            }
+        }
+        catch (Exception e){
+            for (Integer item:x) {
+                System.out.println(item);
+
+            }
+        }
+    }
+    public static void iCanThrowException() throws NullPointerException {
+            throw new NullPointerException();
+            }
+    public static int divideByZero() {
+        int a = 5;
+        int b = 0;
+        try {
+            return a / b;
+        }
+        catch (Exception e) {
+            return 0;
+        }
+    }
+
+}
 
 
